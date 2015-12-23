@@ -885,14 +885,17 @@ function AposBot() {
 
                 //Loop through all the player's cells.
                 for (var k = 0; k < player.length; k++) {
-                    if (true) {
+                    if (30000 + (player[k].birthMass * 57) - (getLastUpdate() - player[k].birth)) > 0 {
                         drawPoint(player[k].x, player[k].y + player[k].size, 0, "" + (getLastUpdate() - player[k].birth) + " / " + (30000 + (player[k].birthMass * 57) - (getLastUpdate() - player[k].birth)) + " / " + player[k].birthMass);
+                    }
+                    else {
+                        drawPoint(player[k].x, player[k].y + player[k].size, 0, "" + (getLastUpdate() - player[k].birth) + " / " + player[k].birthMass);
                     }
                 }
 
 
                 //Loops only for one cell for now.
-                for (var k = 0; /*k < player.length*/ k < 1; k++) {
+                for (var k = 0; k < player.length; k++) {
 
                     //console.log("Working on blob: " + k);
 
