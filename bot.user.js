@@ -885,7 +885,7 @@ function AposBot() {
 
                 //Loop through all the player's cells.
                 for (var k = 0; k < player.length; k++) {
-                    if (30000 + (player[k].birthMass * 57) - (getLastUpdate() - player[k].birth)) > 0 {
+                    if ((30000 + (player[k].birthMass * 57) - (getLastUpdate() - player[k].birth)) > 0) {
                         drawPoint(player[k].x, player[k].y + player[k].size, 0, "" + (getLastUpdate() - player[k].birth) + " / " + (30000 + (player[k].birthMass * 57) - (getLastUpdate() - player[k].birth)) + " / " + player[k].birthMass);
                     }
                     else {
